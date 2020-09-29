@@ -1,0 +1,39 @@
+\ProvidesPackage{mystyle}
+
+\usepackage[utf8]{inputenc} % кодировка
+\usepackage[T2A]{fontenc}
+\usepackage[russian,english]{babel}
+\usepackage{mathtext}
+\usepackage{indentfirst}    % красная строка для первого параграфа
+\usepackage{misccorr}       % настройки для российской полиграфии
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{lastpage}
+\usepackage{setspace} 
+\usepackage{fancybox,fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+
+% ------ включение подфайлов LaTeX ------
+\usepackage{subfiles}
+\newcommand{\onlyinsubfile}[1]{#1}
+\newcommand{\notinsubfile}[1]{}
+
+\usepackage{pdfpages}  % inclide pdf-files
+
+% ----- Поля -------
+\usepackage[includefoot, heightrounded]{geometry}   % поля
+\geometry{left=30mm}
+\geometry{right=20mm}
+\geometry{top=20mm}
+\geometry{bottom=10mm}
+
+\newcommand{\st}[1]{\textbf{\underline{#1}}}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
+\addto\captionsenglish{
+  \renewcommand{\contentsname}
+    {Оглавление}
+}

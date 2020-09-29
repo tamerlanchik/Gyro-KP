@@ -1,0 +1,15 @@
+\documentclass[14pt,a4paper,russian]{scrartcl}
+\usepackage{mystyle}
+\graphicspath{{images/}}
+
+\begin{document}
+
+\renewcommand{\onlyinsubfile}[1]{}
+\renewcommand{\notinsubfile}[1]{#1}
+
+\includepdf[page={1}]{parts/titul}
+\includepdf[page={1}]{parts/task}
+
+\subfile{./part1.tex}
+
+\end{document}

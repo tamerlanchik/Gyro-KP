@@ -1,0 +1,3 @@
+[submodule "LatexTemplater"]
+	path = LatexTemplater
+	url = git@github.com:tamerlanchik/LatexTemplater.git
