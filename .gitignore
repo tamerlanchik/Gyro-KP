@@ -1,8 +1,8 @@
-*/*.aux
-*/*.fdb_latexmk
-*/*.fls
-*/*.log
-*/*.gz
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.gz
 *.gen.tex
 .DS_Store
 *.p.pdf
