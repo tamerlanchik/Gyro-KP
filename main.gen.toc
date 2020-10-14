@@ -1,0 +1,6 @@
+\babel@toc {english}{}
+\contentsline {subsection}{\numberline {1.\relax }Назначение и принцип работы прибора}{6}%
+\contentsline {subsection}{\numberline {2.\relax }Уравнения движения ГПК с соответствующей нелинейностью}{7}%
+\contentsline {subsection}{\numberline {3.\relax }Расчёт выражения для передаточных функций гиросистемы как объекта управления и как объекта стабилизации}{7}%
+\contentsline {subsection}{\numberline {4.\relax }Оптимизация параметров упруго-диссипативной связи динамических элементов гиросистемы по критерию \( minmax |W(j\omega )| \)}{8}%
+\contentsline {subsection}{\numberline {5.\relax }АЧХ механической части гиросистемы с оптимальными параметрами \( \mu \) и С}{11}%

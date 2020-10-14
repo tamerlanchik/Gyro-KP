@@ -8,12 +8,13 @@
 \usepackage{misccorr}       % настройки для российской полиграфии
 \usepackage{graphicx}
 \usepackage{textcomp}
-\usepackage{caption}
 \usepackage{lastpage}
 \usepackage{setspace} 
 \usepackage{fancybox,fancyhdr}
 \usepackage{enumitem}
 \usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{verbatim}
 
 % ------ включение подфайлов LaTeX ------
 \usepackage{subfiles}
@@ -21,6 +22,16 @@
 \newcommand{\notinsubfile}[1]{}
 
 \usepackage{pdfpages}  % inclide pdf-files
+
+% only for \lipsum blind text
+\usepackage{lipsum}
+
+% ref packages
+\usepackage{nameref}
+% folowing  must be in this order
+\usepackage{varioref}
+% \usepackage{hyperref}
+\usepackage{cleveref}
 
 % ----- Поля -------
 \usepackage[includefoot, heightrounded]{geometry}   % поля
@@ -37,3 +48,9 @@
   \renewcommand{\contentsname}
     {Оглавление}
 }
+
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{defffis}{ — }
+\captionsetup{labelsep=defffis}
+\captionsetup[figure]{name=Рисунок}
+

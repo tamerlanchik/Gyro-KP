@@ -31,6 +31,17 @@
 ГПК предназначены для отслеживания азимута (заданного направления) и находят 
 широкое применение в авиации и наземных объектах.
 
+\begin{figure}[h]
+\begin{minipage}[h]{0.49\linewidth}
+    \center{\includegraphics[width=1\linewidth]{images/p1_schema.png}}
+    \caption{Общий вид системы}
+\end{minipage}
+\begin{minipage}[h]{0.49\linewidth}
+    \center{\includegraphics[width=1\linewidth]{images/p1_demfer.png}}
+    \caption{Демпфер}
+\end{minipage}
+\end{figure}
+
 \newcommand{\Mdd}{M_\text{ДД}}
 \newcommand{\Koc}{K_\text{ОС}}
 \newcommand{\Ad}{A_\text{д}}
@@ -113,11 +124,13 @@
     ПФ курсового гироскопа как объекта стабилизации (принимаем \( \Koc=0 \)).\par 
 
     Запишем полное выражение вышеназванной ПФ с указанными допущениями:
-    \[ W^{\alpha}_{M_{\alpha}} = \frac{
+    \begin{equation}\label{eq:KJLDwdI}
+    W^{\alpha}_{M_{\alpha}} = \frac{
         Bs(\Ad s^2 + \mu s + C)
     }{
         A\Ad B s^5 + \mu B(A+\Ad)s^4 + (\Ad H^2+BC(A+\Ad))s^3 + H^2\mu s^2 + CH^2s
-    } \]
+    }
+    \end{equation}
 
     Эта ПФ обладает замечательным свойством: при одном значении C, но разных \( \mu \), на АЧХ 
     будут существовать две инвариантные точки (все АЧХ пересекаются в них). При изменении С эти 
@@ -132,7 +145,7 @@
         \item Поиск значения \( \mu^* \), обеспечивающего минимальное значение резонансных пиков.
     \end{itemize}
 
-    \subsubsection*{Поиск значения \( C^* \)}
+\subsubsection*{Поиск значения \( C^* \)}
     Условие инвариантности имеет следующий вид:
     \[ |W(j\omega)|_{\mu=0} = |W(j\omega)|_{\mu=\infty} \]
     После раскрытия модуля получаем:
@@ -144,11 +157,11 @@
     }{
         A\Ad B (j\omega)^4 + (\Ad H^2+BC(A+\Ad))(j\omega)^2
     } = \frac{-B}{B(A+\Ad)(j\omega)^2 + H^2} \]
-    \[ \frac{
-        B(\Ad\omega^2 - C)
-    }{
+    \begin{equation}\label{eqn:W}
+    \frac{ B(\Ad\omega^2 - C) }{
         A\Ad B\omega^4 - (\Ad H^2+BC(A+\Ad))\omega^2 + CH^2
-    } = \frac{B}{H^2  - B(A+\Ad)\omega^2} \]
+    } = \frac{B}{H^2  - B(A+\Ad)\omega^2}
+    \end{equation}
     
     Решаем уравнение относительно C. В результате получаем четыре корня. Два из них отрицательные и не 
     удовлетворяют ОДЗ. Два других же вполне соответствуют инвариантным точкам \( \omega_1 \) и \( \omega_2 \):
@@ -161,8 +174,77 @@
         10^6 + 0,6C \pm \sqrt{0,36C^2 - 10^6C + 10^{12}}
     }{11}} \]
 
-    Как было замечено в начале, в инвариантных точках значения С равны.
+    Известно, что в инвариантных точках значения амплитуд равны, что
+    можно записать как
+     \[ | W(j\omega) |^{\omega=\omega_1}_{\mu=0}  = | W(j\omega) |^{\omega=\omega_2}_{\mu=0} \]
     
-    
+     Подставим сюда ПФ из правой части (\ref{eqn:W}) и раскроем модуль:
+    \begin{equation}\label{eq:1Mdb}\begin{multlined}
+        \frac{ B(\Ad\omega_1^2 - C) }{
+        A\Ad B\omega_1^4 - (\Ad H^2+BC(A+\Ad))\omega_1^2 + CH^2
+    } = \\ = \frac{ B(\Ad\omega_2^2 - C) }{
+        A\Ad B\omega_2^4 - (\Ad H^2+BC(A+\Ad))\omega_2^2 + CH^2
+    }
+    \end{multlined}\end{equation}
 
+    Имея значения частот от C, решим уравнение (\ref{eq:1Mdb}) относительно С. \par 
+    Получаем \( C^* = \frac{12500000}{9} \approx 13,89\cdot 10^5 \).
+    
+    С учетом полученного значения рассчитаем \( \omega_1,\ \omega_2 \): \\
+    \begin{tabular}{p{0.2\linewidth}p{0.3\linewidth}p{0.4\linewidth}}
+        & \( \omega_1 = 465,5 \) & \( \omega_2 = 341,2 \) \\
+        & \( lg \omega_1 = 2,668 \) & \( lg \omega_2 = 2,53 \) \\
+    \end{tabular}
+
+    \begin{figure}[h]
+        \center{\includegraphics[width=1\linewidth]{images/p4_extremalbode.png}}
+        \caption{АЧХ системы для оптимального C* и предельных \( \mu \)}
+    \end{figure}
+
+\subsubsection*{Поиск значения \( \mu^* \)}
+    Для определения значения \( \mu^* \) следует определить значения \( \mu_1 \) и \( \mu_2 \), 
+    при которых в каждой из инвариантных точек будет экстремум АЧХ (это
+    обеспечивает минимум «всплеска» АЧХ в соответствующих инвариантных
+    точках). Тогда 
+     \[ \mu^* = \frac{\mu_1 + \mu_2 }{2} \]
+
+    Запишем условия поиска:
+    \begin{equation}\begin{cases}
+        \frac{\partial |W(J\omega)|}{\partial\omega} \rvert_{\omega=\omega_1} = 0, \\
+        \frac{\partial |W(J\omega)|}{\partial\omega} \rvert_{\omega=\omega_2} = 0
+    \end{cases}\end{equation}
+
+    \[ W(j\omega) = \frac{M(j\omega)}{N(J\omega)}, \]
+    где 
+    \begin{equation}\begin{cases}
+        M(j\omega) = B(\Ad (j\omega)^2 + \mu (j\omega) + C), \\
+        N(J\omega) = A\Ad B (j\omega)^4 + \mu B(A+\Ad)(j\omega)^3 + \\
+        + (\Ad H^2+BC(A+\Ad))(j\omega)^2  + H^2\mu j\omega + CH^2
+    \end{cases}\end{equation}
+
+    \begin{equation}\begin{cases}
+        M(j\omega) = B( - \Ad \omega^2 + j\mu\omega + C), \\
+        N(J\omega) = A\Ad B \omega^4 -\mu B(A+\Ad)j\omega^3 - \\
+        - (\Ad H^2+BC(A+\Ad))\omega^2  + H^2\mu j\omega + CH^2
+    \end{cases}\end{equation}
+
+    Для каждого \( \omega \) решим уравнение. Получим:
+    \begin{equation}\begin{cases}
+        \mu_1= 1767,26 \\
+        \mu_2=1954,77 \\
+    \end{cases}\end{equation}
+    Тогда \( \mu^*=1861,01 \). \par
+
+    Построим АЧХ для этого значения (см рис. \ref{fig:optimal_bode}).
+
+
+\subsection{АЧХ механической части гиросистемы с оптимальными параметрами \( \mu \) и С}
+    Построим АЧХ системы на основе функции (\ref{eq:KJLDwdI}), 
+    куда подставим найденные оптимальные параметры (см рис. \ref{fig:optimal_bode}).
+
+    \begin{figure}[h]
+        \center{\includegraphics[width=1\linewidth]{images/p4_optimalbode.png}}
+        \caption{АЧХ системы для оптимальных C* и \( \mu^* \)}
+        \label{fig:optimal_bode}
+    \end{figure}
 \end{document}
