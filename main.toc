@@ -1,6 +1,20 @@
 \babel@toc {english}{}
+\contentsline {section}{Задание}{2}%
+\contentsline {section}{Используемые обозначения и сокращения}{5}%
+\contentsline {section}{Расчётная часть}{6}%
 \contentsline {subsection}{\numberline {1.\relax }Назначение и принцип работы прибора}{6}%
-\contentsline {subsection}{\numberline {2.\relax }Уравнения движения ГПК с соответствующей нелинейностью}{7}%
+\contentsline {subsection}{\numberline {2.\relax }Уравнения движения ГПК с соответствующей нелинейностью}{6}%
 \contentsline {subsection}{\numberline {3.\relax }Расчёт выражения для передаточных функций гиросистемы как объекта управления и как объекта стабилизации}{7}%
 \contentsline {subsection}{\numberline {4.\relax }Оптимизация параметров упруго-диссипативной связи динамических элементов гиросистемы по критерию \( minmax |W(j\omega )| \)}{8}%
-\contentsline {subsection}{\numberline {5.\relax }АЧХ механической части гиросистемы с оптимальными параметрами \( \mu \) и С}{11}%
+\contentsline {subsection}{\numberline {5.\relax }АЧХ механической части гиросистемы с оптимальными параметрами \( \mu \) и С}{12}%
+\contentsline {subsection}{\numberline {6.\relax }Синтез цепи обратной связи на условия заданной статической точности и необходимых запасов устойчивости}{13}%
+\contentsline {subsection}{\numberline {7.\relax }Построение переходного процесса по интересующим координатам при действии постоянного возмущающего момента}{15}%
+\contentsline {subsection}{\numberline {8.\relax }Построить АЧХ податливости замкнутой гиросистемы}{16}%
+\contentsline {subsection}{\numberline {9.\relax }Построение АЧХ динамического коэффициента подавления колебаний}{17}%
+\contentsline {subsection}{\numberline {10.\relax }Структурная схема гиросистемы с сопутствующей нелинейностью и преобразование ее к одноконтурной. Выражение для передаточной функции приведенной линейной части}{19}%
+\contentsline {subsection}{\numberline {11.\relax } Обоснование возможности применения метода гармонической линеаризации. Построение ЛАЧХ приведенной линейной части}{20}%
+\contentsline {subsection}{\numberline {12.\relax }Гармоническая линеаризация нелинейной системы. Условие амплитудно-фазового баланса}{20}%
+\contentsline {subsection}{\numberline {13.\relax }Решение уравнения амплитудно-фазового баланса, определение параметров автоколебаний}{22}%
+\contentsline {subsection}{\numberline {14.\relax }Решение исходных нелинейных уравнений численными методами}{23}%
+\contentsline {section}{Выводы}{25}%
+\contentsline {section}{Список использованных источников}{26}%

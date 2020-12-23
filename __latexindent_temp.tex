@@ -8,6 +8,7 @@
 \renewcommand{\notinsubfile}[1]{#1}
 
 \includepdf[page={1}]{parts/titul}
+\addcontentsline{toc}{section}{Задание}
 \includepdf[page={1,2}]{parts/task}
 
 \tableofcontents
@@ -15,7 +16,10 @@
 
 \subfile{./shorts.tex}
 \newpage
+\section*{Расчётная часть}
+\addcontentsline{toc}{section}{Расчётная часть}
 \subfile{./part1.p.tex}
 \newpage
-
+\subfile{./part2.p.tex}
+\newpage
 \end{document}
