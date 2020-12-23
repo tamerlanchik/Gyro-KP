@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1608683622 "/Users/a.kochnov/Documents/Personal/Gyro-KP/main.tex" "/Users/a.kochnov/Documents/Personal/Gyro-KP/main.pdf" "main" 1608683625
+["pdflatex"] 1608683622 "/Users/a.kochnov/Documents/Personal/Gyro-KP/main.tex" "/Users/a.kochnov/Documents/Personal/Gyro-KP/main.pdf" "main" 1608683668
   "././part1.p.tex" 1608683423 15503 4c68bbbd3b19b9f428c28d674740c6c7 ""
   "././part2.p.tex" 1608683538 19334 d172cc29f8c43512e97b53600768a062 ""
   "././shorts.tex" 1608683319 2604 ddd466daf6c6819833d3ee1a22cba3ea ""
@@ -168,8 +168,8 @@
   "parts/titul.pdf" 1608237971 242708 cadb150960ebeffe0630907332a22b6e ""
   (generated)
   "main.toc"
-  "main.aux"
   "main.pdf"
   "/Users/a.kochnov/Documents/Personal/Gyro-KP/main.log"
-  "/Users/a.kochnov/Documents/Personal/Gyro-KP/main.pdf"
   "main.log"
+  "/Users/a.kochnov/Documents/Personal/Gyro-KP/main.pdf"
+  "main.aux"
