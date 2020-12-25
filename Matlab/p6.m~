@@ -54,7 +54,7 @@ T1 = 0.316; T2 = 0.07; T3 = 0.008; T4=0.001
 W_kk = (T2*s+1)/(T1*s+1)/(T3*s+1)*(T4*s+1)
 
 % W = feedback(W_open, W_kk * Kst)
-W = W_open*W_kk*Kst;
+W = W_open*W_kk*Kst
 
 % W0 = feedback(W_open, Kst*W_kk, -1)
 % % W1 = W0 * 
@@ -76,15 +76,12 @@ a = 1
 % hold on;
 % plot(1/T1, 0,'xr', 1/T2, 0, 'xg', 1/T3, 0, 'xb', 1/T4, 0, 'xm', 'LineWidth', 3)
 
-Kst = 3.663e4
-% Kst = 2.063e6
+
 W0 = feedback(W_open, Kst*W_kk, -1)
 
 
-opt = stepDataOptions('StepAmplitude',1.768);
-step(W0,opt)
-
-% f = @(s) 
+opt = stepDataOptions('StepAmplitude',100);
+step(W0)
 a=1;
 % [mag, phase, wout] = bode(W_open*Kst, w);
 % [mag_c, phase_c, wout_c] = bode(W, w);
